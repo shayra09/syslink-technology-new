@@ -28,7 +28,6 @@ DEBUG = True
 
 import os
 
-# Yeh line Render ya kisi bhi server ke domain ko automatic utha legi
 ALLOWED_HOSTS = ['*']
 
 MEDIA_URL = '/media/'
