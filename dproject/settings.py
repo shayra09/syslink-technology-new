@@ -26,6 +26,9 @@ SECRET_KEY = 'django-insecure-32d442n(6%h3oezo^&&prd^4vc0pej3q8ws61avek#a%%9hgx2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+import os
+
+# Yeh line Render ya kisi bhi server ke domain ko automatic utha legi
 ALLOWED_HOSTS = ['*']
 
 MEDIA_URL = '/media/'
