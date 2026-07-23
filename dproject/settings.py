@@ -29,7 +29,7 @@ DEBUG = True
 import os
 
 
-ALLOWED_HOSTS = ['syslink-technology.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
