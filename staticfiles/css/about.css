@@ -1,0 +1,230 @@
+/* Premium Dark Theme Core for About Page */
+:root {
+  --bg-primary: #0b0f19;
+  --bg-surface: #131c2e;
+  --bg-surface-hover: #1e293b;
+  --accent: #6366f1;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Header Section Styling */
+.about-header {
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.12), transparent 70%), var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* List Checked Vectors */
+.premium-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.premium-list li {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.premium-list li i {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 18px;
+}
+
+/* Premium Architecture Cards */
+.about-service-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 40px 24px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.about-service-box:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about-service-box .icon-wrap {
+  font-size: 32px;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Team Profile Structural Architecture */
+.team-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 32px 24px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.team-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-4px);
+}
+
+.team-img-wrapper {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  padding: 4px;
+  background: var(--accent-gradient);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+}
+
+.team-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid var(--bg-surface);
+}
+
+.team-card h5 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+}
+
+.team-card p {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 14px;
+  /* Fixed: text-uppercase को बदलकर सही text-transform किया */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+}
+
+/* Vision & Mission Base Wrapper */
+.vision-mission-wrapper {
+  position: relative;
+  background-color: #090d16;
+  /* Fixed: border-y को हटाकर सही CSS border-top और border-bottom लगाया */
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+/* Forces the Video Asset to fill the entire container gracefully */
+.transparent-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0.12; 
+  z-index: 0;
+}
+
+/* Tint Overlap Layout to maintain contrast matrix */
+.video-tint-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(9, 13, 22, 0.8), rgba(9, 13, 22, 0.5));
+  z-index: 1;
+}
+
+/* Cards Layout Structures */
+.vision-mission-card {
+  background: rgba(19, 28, 46, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+.vision-mission-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+.card-glow-effect {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: var(--accent);
+  filter: blur(80px);
+  opacity: 0;
+  top: -20px;
+  right: -20px;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vision-mission-card:hover .card-glow-effect {
+  /* Fixed: text को रीडेबल रखने के लिए ओपेसिटी को 0.15 सेट किया */
+  opacity: 0.15; 
+}
+
+.icon-sphere {
+  width: 54px;
+  height: 54px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #a5b4fc;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.vision-mission-card:hover .icon-sphere {
+  background: var(--accent-gradient);
+  color: white;
+  border-color: transparent;
+  transform: rotate(15deg);
+}
+
+.vision-mission-card p {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .grad {
+    background: linear-gradient(135deg, #0b0f19 0%, #111827 100%) !important;
+    color: #ffffff;
+    min-height: 100vh;
+  }
+  .client-logo-card {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    transition: all 0.3s ease;
+  }
+  .client-logo-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6 !important;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15) !important;
+  }
+  .badge-tech { background: rgba(59, 130, 246, 0.12); color: #3b82f6; font-size: 0.75rem; }
+  .badge-defence { background: rgba(239, 68, 68, 0.12); color: #ef4444; font-size: 0.75rem; }
+  .badge-gov { background: rgba(245, 158, 11, 0.12); color: #f59e0b; font-size: 0.75rem; }
+  .badge-infra { background: rgba(16, 185, 129, 0.12); color: #10b981; font-size: 0.75rem; }
+  
+  .section-divider {
+    border-top: 1px dashed #334155;
+    margin: 3rem 0;
+    position: relative;
+  }
+  .section-title-tag {
+    background: #111827;
+    padding: 0 15px;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #94a3b8;
+    font-size: 0.85rem;
+    text-uppercase: true;
+    letter-spacing: 0.1em;
+  }
+</style>
+
+<div class="container grad p-5 rounded-4 shadow-lg my-5">
+  <!--  Header Section -->
+  <div class="text-center mb-5">
+    <span class="text-uppercase tracking-wider small fw-bold text-primary" style="letter-spacing: 0.1em;">Syslink Network Ecosystem</span>
+    <h1 class="fw-bold text-white mt-1 mb-2">Our Complete Enterprise Client</h1>
+    <p class="text-muted mx-auto" style="max-width: 650px;">
+      Deploying core technical deliverables, secure cyberways, and infrastructure management across corporate, defense, and public infrastructure segments.
+    </p>
+  </div>
+  <div class="row g-4 justify-content-center">
+    <!-- Syslink Solutions Core -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-network-wired fa-3x text-primary"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">IT Infrastructure</span>
+          <h5 class="fw-bold text-white mb-1">Syslink Solutions</h5>
+          <p class="text-muted small mb-0">System integration deployment models and active operational frameworks.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DMRC (Delhi Metro) -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-train-subway fa-3x text-success" style="color: #10b981 !important;"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-infra mb-2 px-2 py-1 rounded">Mass Transit</span>
+          <h5 class="fw-bold text-white mb-1">DMRC / Rail Projects</h5>
+          <p class="text-muted small mb-0">Network switching automation, data line telemetry, and control systems continuity.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRDO & Military Labs -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-shield-halved fa-3x text-danger"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-defence mb-2 px-2 py-1 rounded">Defence Vertical</span>
+          <h5 class="fw-bold text-white mb-1">DRDO & Defence Labs</h5>
+          <p class="text-muted small mb-0">Secured Cyberway networks, heavy lab server setups, and data assets protection.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tata Projects & L&T -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-helmet-safety fa-3x text-warning" style="color: #f59e0b !important;"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-infra mb-2 px-2 py-1 rounded">Mega Infrastructure</span>
+          <h5 class="fw-bold text-white mb-1">Tata Projects & L&T</h5>
+          <p class="text-muted small mb-0">Site computing networks, structural asset management, and cloud link setups.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Honeywell & Siemens -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-microchip fa-3x text-info"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Industrial Automation</span>
+          <h5 class="fw-bold text-white mb-1">Honeywell & Siemens</h5>
+          <p class="text-muted small mb-0">PLC network routing interfaces, edge data hubs, and factory line arrays.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.6 Spark Minda Group -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-car-side fa-3x text-purple" style="color: #c084fc !important;"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Automotive Manufacturing</span>
+          <h5 class="fw-bold text-white mb-1">Spark Minda Group</h5>
+          <p class="text-muted small mb-0">ERP storage servers backend management and plant network architecture.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="section-divider">
+    <span class="section-title-tag">Commercial Services & Retail Partners</span>
+  </div>
+  <!-- COMMERCIAL SERVICES & PARTNERS -->
+  <div class="row g-4 justify-content-center">
+
+    <!-- Cone Express -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-truck-fast fa-3x text-info" style="color: #38bdf8 !important;"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Logistics Infrastructure</span>
+          <h5 class="fw-bold text-white mb-1">Cone Express</h5>
+          <p class="text-muted small mb-0">High-capacity operations tracking servers and structural supply continuity.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Epson India -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-print fa-3x text-success"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded" style="color: #4ade80; background: rgba(74,222,128,0.12);">Hardware Systems</span>
+          <h5 class="fw-bold text-white mb-1">Epson India</h5>
+          <p class="text-muted small mb-0">Managed firmware optimization systems and ongoing hardware layer SLA maintenance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Star Tech -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-star fa-3x text-warning" style="color: #facc15 !important;"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Consumer Tech</span>
+          <h5 class="fw-bold text-white mb-1">Star Tech</h5>
+          <p class="text-muted small mb-0">Retail framework matrices and centralized systems database cloud nodes.</p>
+        </div>
+      </div>
+    </div>
+      <!--AGS Transact -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-credit-card fa-3x text-danger" style="color: #f87171 !important;"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Transaction Security</span>
+          <h5 class="fw-bold text-white mb-1">AGS Transact</h5>
+          <p class="text-muted small mb-0">Secure financial transactions pipelines and transaction server layer deployments.</p>
+        </div>
+      </div>
+    </div>
+    <!-- AGC Networks -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <i class="fa-solid fa-cloud-bolt fa-3x" style="color: #c084fc;"></i>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded" style="color: #c084fc; background: rgba(192,132,252,0.12);">Cloud Systems</span>
+          <h5 class="fw-bold text-white mb-1">AGC Networks</h5>
+          <p class="text-muted small mb-0">Multi-tenant server array designs and high availability virtualization fabrics.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+

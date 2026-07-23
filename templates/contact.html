@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="gradient-bg-wrapper py-5 min-vh-100 d-flex align-items-center">
+    <div class="container py-4">
+
+        <!-- Section Header -->
+        <div class="text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
+            <h1 class="display-3 fw-black text-white text-uppercase tracking-wider mb-2">Connect With Us</h1>
+            <p class="text-white-50 col-md-6 mx-auto fs-5 fw-light">Have questions or a concept to build? Drop us a line
+                below.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+
+            <!-- Left Column-->
+            <div class="col-lg-5 d-flex flex-column justify-content-between">
+                <div class="glass-card p-4 mb-3 border-start border-primary border-4" data-aos="fade-right"
+                    data-aos-delay="100" data-aos-duration="800">
+                    <div class="d-flex align-items-center">
+                        <div class="glass-icon-box text-primary me-4">
+                            <i class="fa-solid fa-map-location-dot fa-xl"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white fw-bold mb-1">Address</h5>
+                            <p class="text-white-50 mb-0 small">14/1 First Floor, Khairu Place, Chandni Chowk,
+                                Kolkata-700072
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-4 mb-3 border-start border-success border-4" data-aos="fade-right"
+                    data-aos-delay="200" data-aos-duration="800">
+                    <div class="d-flex align-items-center">
+                        <div class="glass-icon-box text-success me-4">
+                            <i class="fa-solid fa-envelope-open-text fa-xl"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white fw-bold mb-1">Direct Mail</h5>
+                            <p class="text-white-50 mb-0 small">syslink26@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-4 mb-4 border-start border-info border-4" data-aos="fade-right"
+                    data-aos-delay="300" data-aos-duration="800">
+                    <div class="d-flex align-items-center">
+                        <div class="glass-icon-box text-info me-4">
+                            <i class="fa-solid fa-headset fa-xl"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white fw-bold mb-1">Mobile</h5>
+                            <p class="text-white-50 mb-0 small">91 93544 02792
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card overflow-hidden p-2 h-100 min-height-map" data-aos="zoom-in-up"
+                    data-aos-delay="400" data-aos-duration="1000">
+                    <iframe class="w-100 h-100 rounded-3 grayscale-map" allowfullscreen="" loading="lazy"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3288792895264!2d88.35610437474416!3d22.566799679495837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277007ebede01%3A0xf5ac5da5ab54f78c!2sSys%20Link%20Technology!5e0!3m2!1sen!2sin!4v1783765021730!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Right Column: Premium Transparent Input Form -->
+            <div class="col-lg-7">
+                <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column justify-content-center" data-aos="fade-left"
+                    data-aos-delay="200" data-aos-duration="1000">
+                    <h3 class="text-white fw-bold mb-4 position-relative pb-2">
+                        Send An Inquiry
+                        <span class="title-underline"></span>
+                    </h3>
+
+<!-- Form Section Only (Replace inside your template) -->
+<form method="POST" action="{% url 'contact' %}">
+    {% csrf_token %}
+
+    <!-- Django Messages Display Area (For Success/Error Alerts) -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="submit" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <!-- Added: name="name" -->
+                <input type="text" name="name" class="form-control glass-input" id="floatName" placeholder="Name" required>
+                <label for="floatName" class="text-white-50">Your Name</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                <!-- Added: name="email" -->
+                <input type="email" name="email" class="form-control glass-input" id="floatEmail" placeholder="Email" required>
+                <label for="floatEmail" class="text-white-50">Email Address</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" name="subject" class="form-control glass-input" id="floatSubject" placeholder="Subject" required>
+        <label for="floatSubject" class="text-white-50">Subject</label>
+    </div>
+    <div class="form-floating mb-4">
+        <textarea name="message" class="form-control glass-input" id="floatMessage" placeholder="Message" style="height: 150px" required></textarea>
+        <label for="floatMessage" class="text-white-50">Message Details</label>
+    </div>
+    <button type="submit" class="btn text-white w-100 fw-bold py-3 text-uppercase tracking-wider btn-gradient-glow">
+        Dispatch Message <i class="fa-solid fa-paper-plane ms-2 ship-icon"></i>
+    </button>
+</form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--  Custom CSS  -->
+<style>
+    .gradient-bg-wrapper {
+        background: linear-gradient(-45deg, #0f2a28, #3d1ea4, #311042, #170215);
+        background-size: 400% 400%;
+        animation: gradientMovement 15s ease infinite;
+        overflow-x: hidden;
+    }
+
+    @keyframes gradientMovement {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.03) !important;
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.07) !important;
+        border-radius: 16px !important;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background 0.4s ease;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-8px) scale(1.01);
+        background: rgba(255, 255, 255, 0.06) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .glass-input {
+        background: rgba(255, 255, 255, 0.04) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+        border-radius: 10px !important;
+        transition: all 0.3s ease-in-out !important;
+    }
+
+    .glass-input:focus {
+        background: rgba(255, 255, 255, 0.08) !important;
+        border-color: rgba(13, 110, 253, 0.6) !important;
+        box-shadow: 0 0 15px rgba(13, 110, 253, 0.25) !important;
+        transform: translateY(-2px);
+    }
+
+    .form-floating>.glass-input:focus~label,
+    .form-floating>.glass-input:not(:placeholder-shown)~label {
+        color: #0d6efd !important;
+        transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    }
+
+    .btn-gradient-glow {
+        background: linear-gradient(135deg, #0d6efd, #d63384);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(214, 51, 132, 0.3);
+        transition: all 0.4s ease;
+    }
+
+    .btn-gradient-glow:hover {
+        box-shadow: 0 6px 25px rgba(13, 110, 253, 0.5);
+        letter-spacing: 2px;
+        background: linear-gradient(135deg, #d63384, #0d6efd);
+    }
+
+    .btn-gradient-glow:hover .ship-icon {
+        transform: translate(6px, -6px) rotate(-15deg);
+    }
+
+    .ship-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .glass-icon-box {
+        width: 54px;
+        height: 54px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #0d6efd, #d63384);
+        border-radius: 2px;
+    }
+
+    .tracking-wider {
+        letter-spacing: 2px;
+    }
+
+    .fw-black {
+        font-weight: 900;
+    }
+
+    .grayscale-map {
+        filter: invert(90%) hue-rotate(180deg) opacity(0.85);
+        transition: filter 0.5s ease;
+    }
+
+    .glass-card:hover .grayscale-map {
+        filter: invert(0%) hue-rotate(0deg) opacity(1);
+    }
+
+    .min-height-map {
+        min-height: 280px;
+    }
+
+    @media (max-width: 991px) {
+        .min-height-map {
+            height: 320px;
+        }
+    }
+</style>
+{% endblock %}

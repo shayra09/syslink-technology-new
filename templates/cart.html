@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+.cart-page {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* LEFT */
+.cart-left {
+    flex: 3;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cart-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.price {
+    color: #B12704;
+    font-weight: bold;
+}
+
+.stock {
+    color: green;
+}
+
+.qty {
+    margin-top: 10px;
+}
+
+.qty button {
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.remove {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #007185;
+    cursor: pointer;
+}
+
+/* RIGHT */
+.cart-right {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    height: fit-content;
+    border-radius: 10px;
+}
+
+.checkout {
+    width: 100%;
+    padding: 10px;
+    background: #FFD814;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+</style>
+
+<div class="cart-page">
+
+    <!-- LEFT -->
+    <div class="cart-left">
+        <h2>Shopping Cart</h2>
+
+        {% for item in cart_items %}
+        <div class="cart-item" id="item-{{ item.id }}">
+            
+            <img src="{% static 'images/img5.jfif' %}" alt="product">
+
+            <div class="item-info">
+                <h4>{{ item.name }}</h4>
+                <p class="price">${{ item.price }}</p>
+                <p class="stock">In Stock</p>
+
+                <div class="qty">
+                    <button>-</button>
+                    <span>{{ item.quantity }}</span>
+                    <button>+</button>
+                </div>
+
+                <!-- ✅ REMOVE FORM -->
+                <form method="POST" action="{% url 'remove_from_cart' item.id %}" class="remove-form">
+                    {% csrf_token %}
+                    <button type="submit" class="remove">Remove</button>
+                </form>
+
+            </div>
+        </div>
+        {% empty %}
+            <p>Your cart is empty.</p>
+        {% endfor %}
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="cart-right">
+        <h3>Subtotal: <span>${{ total_price }}</span></h3>
+        <button class="checkout">Proceed to Checkout</button>
+    </div>
+
+</div>
+
+<!-- ✅ JAVASCRIPT (HYBRID AJAX) -->
+<script>
+document.querySelectorAll('.remove-form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        fetch(this.action, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': this.querySelector('[name=csrfmiddlewaretoken]').value,
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                this.closest('.cart-item').remove();
+            }
+        });
+    });
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,229 @@
+
+/* --- IS CSS KO APNI SERVICES.CSS FILE MEIN SABSE NICHE PASTE KAREIN --- */
+
+.card.product-card {
+  display: block !important;
+  border-radius: 24px !important;                 /* Aapka original round shape */
+  background: rgba(255, 255, 255, 0.02) !important; /* White color remove karne ke liye transparent background */
+  padding: 16px !important;                       /* Card ke andar ka spacing */
+  backdrop-filter: blur(12px) !important;         /* Glassmorphism blur filter */
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Subtle dark-white border line */
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3) !important;  /* Background smooth shadow */
+  transform-style: preserve-3d !important;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease, transform 0.4s ease !important;
+  will-change: transform;
+}
+
+/* Card body ka white background strip remove karne ke liye */
+.card.product-card .card-body {
+  background: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 20px !important;
+}
+
+/* Loop images ko perfectly box mein fit karne ke liye */
+.card.product-card .card-img-top {
+  border-radius: 16px !important;
+  object-fit: cover !important;
+  height: 220px !important;
+}
+
+/* Hover karne par premium shadow aur dynamic upward lift */
+.card.product-card:hover {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55), 0 0 50px rgba(99, 102, 241, 0.15) !important;
+  cursor: pointer;
+  transform: translateY(-6px) !important;
+}
+
+/* Card titles and text colors clarity setup */
+.card.product-card h4 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.card.product-card .product-price {
+  color: #cbd5e1 !important; 
+}
+
+.hero-product-wrapper {
+  display: inline-block;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+/* Image styling and Idle Float Animation */
+.hero-product.effect-3d {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  animation: premiumFloat 6s ease-in-out infinite;
+  transition: transform 0.2s ease-out;
+}
+
+/* Continuous smooth floating loop */
+@keyframes premiumFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Premium interactions on Hover */
+.hero-product-wrapper:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55), 0 0 50px rgba(0, 123, 255, 0.15);
+  cursor: pointer;
+}
+
+.hero-product-wrapper:hover .hero-product.effect-3d {
+  animation-play-state: paused; 
+}
+
+
+    .text-muted, .footer-text.text-muted {
+      color: #cbd5e1 !important; 
+    }
+
+    .custom-navbar {
+      background: #0b0f19 !important;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .navbar-brand {
+      font-size: 1.4rem;
+      letter-spacing: 0.02em;
+    }
+    .nav-link {
+      color: #94a3b8 !important;
+      font-weight: 500;
+      padding: 8px 16px !important;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover, .nav-item.active .nav-link {
+      color: #ffffff !important;
+    }
+    .nav-link i {
+      margin-right: 6px;
+      font-size: 0.95rem;
+    }
+ 
+    .btn-premium-nav {
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      color: #ffffff !important;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 24px;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-premium-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+      color: #ffffff !important;
+    }
+
+    /* Upper Footer CSS */
+    .footer-premium {
+      background: #060911 !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 15px;
+    }
+
+    .footer-title {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+      position: relative;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    }
+
+    .footer-text {
+      line-height: 1.7;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: #6366f1 !important;
+      transform: translateX(6px);
+      text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    }
+
+    .footer-links a i {
+      font-size: 10px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover i {
+      opacity: 1;
+    }
+
+    .social-link {
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      color: white !important;
+      border-color: transparent;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+    }
+    .footer-sub-links a:hover {
+      color: #ffffff !important;
+    }
+    /* Clean Base-level Bottom Footer styling */
+    .footer-bottom-clean {
+      background: #04060b !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    
+    

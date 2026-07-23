@@ -1,0 +1,223 @@
+    .category-nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .category-btn {
+        background: #1b1f27;
+        color: #d9d9d9;
+        border: 1px solid #2d3748;
+        border-radius: 50px;
+        padding: 10px 22px;
+        transition: .3s;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+        background: #0d6efd;
+        color: #fff;
+        border-color: #0d6efd;
+    }
+
+body {
+    background-color: #0B0F19 !important; 
+}
+.tracking-wider {
+    letter-spacing: 0.15em;
+}
+.container {
+    perspective: 1500px; 
+}
+.card.service-card {
+    background: linear-gradient(145deg, #131A2C, #0E1322);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.icon-wrapper {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    background: rgba(0, 123, 255, 0.06);
+    border: 1px solid rgba(0, 123, 255, 0.15);
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+.btn-explore {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff !important;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.btn-explore i {
+    transition: transform 0.3s ease;
+}
+.card.service-card:hover {
+    border-color: rgba(0, 123, 255, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 123, 255, 0.1);
+}
+.card.service-card:hover .icon-wrapper {
+    background: #007bff;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+    transform: translateZ(20px); /* Lifts icon out in 3D space */
+}
+.card.service-card:hover .btn-explore {
+    background: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+.card.service-card:hover .btn-explore i {
+    transform: translateX(4px);
+}
+.card.service-card:hover .card-title {
+    color: #007bff !important;
+}
+
+ .hover-shadow {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .hover-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.15)!important;
+    }
+    
+  /* background vedio css */
+.hero-video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+.hero-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(5,10,20,.75);
+backdrop-filter:blur(2px);
+z-index:-1;
+}
+    .service-card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(14px);
+border-radius:20px;
+transition:.4s;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+border-color:#0EA5E9;
+box-shadow:0 20px 45px rgba(14,165,233,.3);
+}
+
+/* company brands css */
+@media (min-width: 992px) {
+    .col-lg-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+.partner-card {
+    background: #ffffff;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.brand-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+
+.brand-text.lenovo { font-style: italic; color: #002244; font-family: sans-serif; }
+.brand-text.dell { color: #007db1; font-family: 'Arial Black', sans-serif; }
+.brand-text.canon { color: #e4002b; font-size: 1.4rem; font-family: 'Georgia', serif; }
+.brand-text.microsoft { color: #737373; font-weight: 600; }
+.brand-text.symantec { color: #1a1a1a; font-weight: 400; font-family: monospace; }
+.brand-text.kingston { color: #e4002b; font-family: Impact, sans-serif; letter-spacing: 0.05em; }
+.brand-text.kaspersky { color: #006d5b; letter-spacing: -0.01em; }
+.brand-text.cisco { color: #00bceb; font-weight: 800; font-family: Courier, monospace; }
+.brand-text.emc { color: #0066cc; font-style: italic; }
+.brand-text.aws { color: #ff9900; font-size: 2rem; }
+.brand-text.adobe { color: #fa0f00; font-weight: 800; }
+.brand-text.google-cloud { color: #4285f4; font-weight: 500; }
+.brand-text.icewarp { 
+    color: #1a428a; 
+    font-family: 'Century Gothic', sans-serif; 
+    font-weight: 800; 
+    letter-spacing: -0.04em;
+}
+
+.brand-text.sophos { color: #005493; letter-spacing: 0.05em; }
+.brand-text.dlink { color: #1b4e9b; text-transform: uppercase; }
+.brand-text.teamviewer { color: #0080ff; font-weight: 600; }
+.brand-text.tplink { color: #00aec7; font-weight: 600; text-transform: lowercase; }
+.brand-text.transcend { color: #cc0033; font-weight: 800; font-style: italic; }
+.brand-text.trendmicro { color: #e60000; font-size: 0.95rem; }
+.brand-text.sonicwall { color: #f26522; letter-spacing: 0.02em; }
+.brand-text.autocad { color: #1a1a1a; font-weight: 300; letter-spacing: 0.1em; }
+.brand-text.kyocera { color: #e3001b; font-family: 'Courier New', monospace; font-weight: 900; }
+.brand-text.wd { color: #005194; font-size: 1rem; font-family: Impact; }
+.brand-text.acronis { color: #002f6c; text-transform: uppercase; letter-spacing: 0.05em; }
+.brand-text.hp { color: #0096d6; font-size: 1.8rem; font-style: italic; font-family: serif; }
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
+}
+
+.partner-card:hover .brand-text {
+    transform: scale(1.05);
+}
+
+.partner-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.partner-card:hover::after {
+    width: 100%;
+}
+/* services css end */
+
+
+

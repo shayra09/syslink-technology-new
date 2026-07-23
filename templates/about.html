@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ABOUT HEADER MODULE -->
+<div class="about-header py-5 text-center mb-5" style="background: rgba(255, 255, 255, 0.02); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+  <div class="container py-4" data-aos="fade-up">
+    <h1 class="text-white fw-bold">About Our Agency</h1>
+    <p class="text-muted fs-5 mt-2 mx-auto" style="max-width:600px;">Discover the core ecosystem philosophy and technology architectures driving our platform forward.</p>
+  </div>
+</div>
+
+<!-- ABOUT IDENTITY CORE SECTION -->
+<div class="container py-5 mb-5">
+  <div class="row align-items-center g-5">
+
+    <!-- Image Bounding Box Grid Container -->
+    <div class="col-md-6" data-aos="zoom-in" data-aos-duration="800">
+      <div class="position-relative">
+        <!-- Floating glow element behind image -->
+        <div class="position-absolute w-75 h-75 rounded-3" style="background:var(--accent, #0ea5e9); filter:blur(100px); opacity:0.15; top:10%; left:10%; z-index:0;"></div>
+        <img src="{% static 'media/services/cybersecurity.avif' %}" class="img-fluid rounded-4 shadow-lg position-relative" style="z-index:1; border:1px solid rgba(255,255,255,0.1);" alt="Corporate Ecosystem Showpiece">
+      </div>
+    </div>
+
+    <!-- Technical Pitch Text Area Layout -->
+    <div class="col-md-6" data-aos="fade-left" data-aos-duration="800">
+      <span class="text-uppercase tracking-wider text-primary small font-weight-bold mb-2 d-inline-block" style="letter-spacing: 0.1em;">Corporate Profile</span>
+      <h2 class="fw-bold text-white mb-4" style="font-size:36px;">Who We Are</h2>
+      <p class="text-muted lh-lg mb-4 fs-6">
+        Syslink Technologies (A Partner of Complete IT Solutions), is an IT software, hardware and services Company based in New Delhi, India, providing quality services like Business CRM, Website Designing, Development Hosting, Computer hardware, securities antivirus, backup solutions, cloud management etc. We believe in developing client-focused solutions for solution-focused clients. Ronam Technologies started its operations in the year 2015. Ronam Technologies has been serving clients ranging from Individuals, Professionals, Small and Medium Business houses, Big Corporate houses and Public Sector Undertakings. Client satisfaction is our foremost goal. We bring an unmatched heritage of ideas and execution to the challenge of realizing the potential of a connected world. The group has undertaken many challenging projects and accumulated skills and experiences in design and build solutions, project management services, building trades and related IT solutions like Hardware, Software & IT services.
+      </p>
+
+      <ul class="list-unstyled premium-list text-white">
+        <li class="mb-2"><i class="fa-solid fa-circle-check text-primary me-2"></i> <span>Premium Verified Quality Hardware</span></li>
+        <li class="mb-2"><i class="fa-solid fa-circle-check text-primary me-2"></i> <span>Insured High-Velocity Global Delivery</span></li>
+        <li class="mb-2"><i class="fa-solid fa-circle-check text-primary me-2"></i> <span>Enterprise Quantum Level Data Checkout</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- VISION & MISSION ARCHITECTURE SECTION WITH TRANSPARENT BACKROUND VIDEO -->
+<div class="position-relative py-5 overflow-hidden vision-mission-wrapper" style="min-height: 400px; background: #050a14;">
+  
+  <!-- Transparent Background Video Integration -->
+  <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100 style-video" style="object-fit: cover; z-index: 0; opacity: 0.3;">
+    <source src="{% static 'videos/bg_video1.mp4' %}" type="video/mp4">
+  </video>
+  
+  <!-- Dark Tint Mask overlay to control transparency and text readability -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 video-tint-overlay" style="background: rgba(5, 10, 20, 0.6); z-index: 1;"></div>
+  
+  <div class="container position-relative" style="z-index: 2;">
+    <div class="row g-4">
+      
+      <!-- Our Mission Card Grid -->
+      <div class="col-md-6" data-aos="fade-right" data-aos-duration="900">
+        <div class="vision-mission-card h-100 p-4 rounded-4" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <span class="icon-sphere text-primary fs-3"><i class="fa-solid fa-bullseye"></i></span>
+            <h3 class="fw-bold mb-0 text-white" style="font-size: 26px;">Our Mission</h3>
+          </div>
+          <p class="text-muted lh-lg mb-0 fs-6">
+            To procure projects at competitive pricing, provide safe working conditions and deliver quality work within reasonable time frame.
+          </p>
+        </div>
+      </div>
+
+      <!-- Our Vision Card Grid -->
+      <div class="col-md-6" data-aos="fade-left" data-aos-duration="900">
+        <div class="vision-mission-card h-100 p-4 rounded-4" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <span class="icon-sphere text-primary fs-3"><i class="fa-solid fa-eye"></i></span>
+            <h3 class="fw-bold mb-0 text-white" style="font-size: 26px;">Our Vision</h3>
+          </div>
+          <p class="text-muted lh-lg mb-0 fs-6">
+            To become the defining benchmark for premium asset delivery networks globally. We envision an interconnected digital trade infrastructure where luxury technologies, high-end interior systems, and contemporary architectural assets flow instantly with absolute security, absolute clarity, and fluid user satisfaction matrices.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CAPABILITIES & UTILITIES SERVICES ARCHITECTURE -->
+<div class="container py-5 mb-5">
+  <div class="text-center mb-5" data-aos="fade-up">
+    <span class="text-uppercase tracking-wider text-primary small font-weight-bold d-inline-block" style="letter-spacing: 0.1em;">Core Framework</span>
+    <h2 class="fw-bold text-white mt-2" style="font-size:32px;">Operational Standard Ecosystem</h2>
+  </div>
+
+  <div class="row g-4 text-center">
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="about-service-box p-4 rounded-4" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05);">
+        <span class="icon-wrap text-primary fs-2 mb-3 d-inline-block"><i class="fa-solid fa-truck-fast"></i></span>
+        <h5 class="fw-bold text-white mb-2">Priority Dispatches</h5>
+        <p class="text-muted small mb-0">Complimentary white-glove logistics asset mapping across active zones.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="about-service-box p-4 rounded-4" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05);">
+        <span class="icon-wrap text-primary fs-2 mb-3 d-inline-block"><i class="fa-solid fa-shield-halved"></i></span>
+        <h5 class="fw-bold text-white mb-2">Encrypted Checkouts</h5>
+        <p class="text-muted small mb-0">Advanced tokenization protocols safeguarding infrastructure finances.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="about-service-box p-4 rounded-4" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05);">
+        <span class="icon-wrap text-primary fs-2 mb-3 d-inline-block"><i class="fa-solid fa-headset"></i></span>
+        <h5 class="fw-bold text-white mb-2">Concierge Matrix</h5>
+        <p class="text-muted small mb-0">Direct 24/7 technical live engineer assistance arrays always open.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LEADERSHIP TEAM ARCHITECTURE -->
+<div class="container py-5 mb-4">
+  <div class="text-center mb-5" data-aos="fade-up">
+    <span class="text-uppercase tracking-wider text-primary small font-weight-bold d-inline-block" style="letter-spacing: 0.1em;">Leadership</span>
+    <h2 class="fw-bold text-white mt-2" style="font-size:32px;">Ecosystem Brains</h2>
+  </div>
+
+  <div class="row g-4 text-center justify-content-center">
+
+    <!-- Member 1 -->
+    <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+      <div class="team-card p-4 rounded-4" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="team-img-wrapper mb-3 mx-auto" style="width: 120px; height: 120px; overflow: hidden; border-radius: 50%;">
+          <img src="https://pravatar.cc" class="w-100 h-100" style="object-fit: cover;" alt="Renu - Founder">
+        </div>
+        <h5 class="text-white fw-bold">Renu</h5>
+        <p class="text-muted small mb-0">Founder & Architect</p>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+      <div class="team-card p-4 rounded-4" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="team-img-wrapper mb-3 mx-auto" style="width: 120px; height: 120px; overflow: hidden; border-radius: 50%;">
+          <img src="{% static 'images/img2.jpg' %}" class="w-100 h-100" style="object-fit: cover;" alt="Priya - Manager">
+        </div>
+        <h5 class="text-white fw-bold">Priya</h5>
+        <p class="text-muted small mb-0">Operations Lead</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

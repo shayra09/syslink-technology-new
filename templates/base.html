@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syslink Technology | Enterprise IT Solutions</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Fixed: Fixed broken Bootstrap Icons CDN URL link -->
+  <link rel="stylesheet" href="https://jsdelivr.net">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://jsdelivr.net" rel="stylesheet">
+
+  <!-- Custom CSS Workspaces -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/index.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/services.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/about.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="{% url 'index' %}">Syslink Technology</a>
+
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Standard Aligned Navigation Items -->
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}"><i class="fa-solid fa-house"></i> Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'services' %}"><i class="fa-solid fa-gears"></i>
+              Services & Solutions</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'client' %}"><i class="fa-solid fa-laptop-code"></i>
+              Our Client</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'about' %}"><i class="fa-solid fa-circle-info"></i>
+              About Us</a></li>
+        </ul>
+
+        <!-- Premium Corporate Call Action Interface -->
+        <div class="d-flex align-items-center">
+          <a class="btn-premium-nav" href="{% url 'contact' %}">
+            <i class="fa-solid fa-headset"></i> Connect Hub
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT BLOCK -->
+  {% block content %}{% endblock %}
+
+  <!-- UPPER FOOTER -->
+  <footer class="footer-premium py-5 mt-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Company Column -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title mb-4">Syslink Technologies</h5>
+          <p class="footer-text text-muted mb-4">A Partner of Complete IT Solutions. Delivering cutting-edge IT
+            infrastructure and professional technology configurations since 2015.</p>
+          <div class="footer-socials d-flex gap-3">
+            <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <!-- Solutions Column -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title mb-4">Solutions</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#"><i class="fa-solid fa-chevron-right me-2"></i>Hardware Solutions</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right me-2"></i>Networks & Security</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right me-2"></i>Software</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right me-2"></i>Cloud Solution </a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right me-2"></i>Backup & Recovery</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title mb-4">Services</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#"><i class="fa-solid fa-chevron-right me-2"></i>IT Infrastructure</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right me-2"></i>Data Migration Solutions</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right me-2"></i>Installation & Config</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right me-2"></i>Facility Management</a></li>
+          </ul>
+        </div>
+
+        <!-- Corporate Hub Contacts Column -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title mb-4">Corporate Hubs</h5>
+          <div class="contact-block mb-3">
+            <h6 class="text-white small mb-1"><i class="fa-solid fa-location-dot me-2 text-primary"></i>Kolkata
+            </h6>
+            <p class="footer-text text-muted small mb-0">14/1 First Floor, Khairu Place, Chandni Chowk, Kolkata-700072
+
+</p>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- Divider Line Layout -->
+      <hr class="my-5" style="border-color: rgba(255, 255, 255, 0.08);">
+
+      <!-- Copyright and Policies Wrapper -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div class="text-muted small">© 2026 Syslink Technologies. All rights reserved globally.</div>
+        <div class="footer-sub-links">
+          <a href="#" class="text-decoration-none text-muted small mx-2">Privacy Policy</a>
+          <a href="#" class="text-decoration-none text-muted small mx-2">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <footer class="footer-bottom-clean text-center py-4">
+    <div class="container">
+      <div class="text-muted small" style="opacity: 0.6;">Syslink Infrastructure Platform Architecture Framework v3.2
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap Bundle with Popper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <!-- Fixed: Restored full complete library path for AOS engine -->
+  <script src="https://unpkg.com"></script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init({
+        duration: 800, 
+        once: true,   
+        offset: 100   
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ service.title }} - Enterprise Solutions{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background-color: #0b0f19 !important;
+    color: #f1f5f9;
+  }
+  .back-link {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  .back-link:hover {
+    color: #3b82f6;
+    transform: translateX(-4px);
+  }
+  .detail-img { 
+    width: 100%; 
+    height: 480px; 
+    object-fit: cover; 
+    border-radius: 12px;
+    border: 1px solid #334155;
+  }
+  .badge-category {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+  .section-title-line {
+    border-left: 4px solid #3b82f6;
+    padding-left: 12px;
+  }
+</style>
+
+<div class="container pt-4 pb-5">
+  <!-- Back Button Link -->
+  <div class="mb-4">
+    <a href="{%url 'services' %}" class="back-link d-inline-flex align-items-center gap-2 font-weight-bold">
+      <i class="fa-solid fa-arrow-left"></i> Back to All Services
+    </a>
+  </div>
+
+  <div class="row g-5">
+    <!-- Left Column: Visual Assets -->
+    <div class="col-lg-6">
+      <img src="{{ service.image.url }}" class="detail-img shadow-lg" alt="{{ service.title }}">
+    </div>
+
+    <!-- Right Column: Clean Informational Layout -->
+    <div class="col-lg-6 d-flex flex-column justify-content-between">
+      <div>
+        <div class="mb-3">
+          <span class="badge badge-category px-3 py-2 rounded">{{ service.category.name }}</span>
+        </div>
+
+        <h1 class="display-5 font-weight-bold text-white mb-4">{{ service.title }}</h1>
+        {% if service.short_description %}
+        <div class="p-3 mb-4 rounded shadow-sm" style="background-color: #1e293b; border-left: 4px solid #3b82f6;">
+          <p class="mb-0 text-muted" style="font-style: italic; font-size: 1.05rem;">
+            {{ service.short_description }}
+          </p>
+        </div>
+        {% endif %}
+        <div class="row g-3 mb-4">
+          <div class="col-sm-6">
+            <div class="p-3 rounded border" style="background: #1e293b; border-color: #334155 !important;">
+              <div class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-shield-halved text-primary fs-4"></i>
+                <div>
+                  <h6 class="mb-0 text-white font-weight-bold">SLA Guaranteed</h6>
+                  <small class="text-muted">99.9% Uptime</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="p-3 rounded border" style="background: #1e293b; border-color: #334155 !important;">
+              <div class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-user-check text-primary fs-4"></i>
+                <div>
+                  <h6 class="mb-0 text-white font-weight-bold">Expert Assigned</h6>
+                  <small class="text-muted">Certified Engineer</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 rounded border text-center text-sm-start d-sm-flex justify-content-between align-items-center" style="background: #1e293b; border-color: #334155 !important;">
+        <div class="mb-3 mb-sm-0">
+          <h5 class="mb-1 text-white font-weight-bold">Have additional questions?</h5>
+          <p class="text-muted small mb-0">Get direct answers from our specialized engineering team desk.</p>
+        </div>
+        <a href="{% url 'contact' %}" class="btn btn-primary px-4 py-2 font-weight-bold text-nowrap">
+          <i class="fa-solid fa-envelope me-2"></i> Contact Desk
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <h4 class="section-title-line text-white mb-4">Technical Overview & Scope</h4>
+      <div class="text-muted" style="font-size: 1.05rem; line-height: 1.8; text-align: justify;">
+        {{ service.long_description|linebreaks }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

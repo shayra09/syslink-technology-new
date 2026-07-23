@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+  body {
+    background-color: #060911 !important;
+    color: #ffffff !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+  }
+  .text-muted {
+    color: #a0aec0 !important;
+  }
+  small.text-muted {
+    color: #cbd5e1 !important;
+  }
+  /* Products horizontal slider fix */
+  .products-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+  }
+  .scroll-card {
+    flex: 0 0 auto;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px;
+    padding: 16px;
+  }
+  /* Category layout adjustments */
+  .category-box, .feature-icon-box {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+  .category-box:hover, .feature-icon-box:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(99, 102, 241, 0.3) !important;
+  }
+  .category-box i {
+    font-size: 32px;
+    color: #6366f1;
+    margin-bottom: 12px;
+  }
+</style>
+
+<video autoplay muted loop playsinline class="hero-video" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1; object-fit: cover; opacity: 0.15;">
+  <source src="{% static 'media/videos/bg_video2.mp4' %}" type="video/mp4">
+</video>
+
+<section class="hero py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h1 class="mb-4" style="font-weight: 800; font-size: 3.5rem;">Scale Smarter,<br><span style="color: #6366f1;">Secure Better</span></h1>
+        <p class="mb-5 text-muted pe-lg-5">Empower your corporate ecosystem with enterprise-grade cybersecurity,
+          hyper-converged server architectures, and managed IT services built for uninterrupted business continuity.</p>
+        <div class="d-flex gap-3">
+          <a href="{% url 'services' %}" class="btn btn-premium btn-lg" style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: #fff; border: none; padding: 14px 32px; border-radius: 12px; font-weight: 600;">Explore Solutions</a>
+          <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg style-v2"
+            style="border-radius:12px; padding: 14px 32px;">Request Consultation</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <!-- Working Hero Wrapper with original blur rules -->
+        <div class="hero-product-wrapper" data-tilt style="display: inline-block; border-radius: 24px; background: rgba(255, 255, 255, 0.02); padding: 16px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3); transition: all 0.5s ease;">
+          <img src="{% static 'media/services/server storage.jpg' %}" class="effect-3d" alt="Enterprise Architecture Spotlight" style="border-radius: 16px; max-width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container py-4">
+  <div class="products-scroll">
+    <div class="scroll-card d-flex align-items-center gap-3">
+      <div style="width:60px; height:60px; background:#1e293b; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff;">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div>
+        <h6 class="mb-0 text-white">Cybersecurity</h6><small class="text-muted">OEM Certified Partner</small>
+      </div>
+    </div>
+    <div class="scroll-card d-flex align-items-center gap-3">
+      <div style="width:60px; height:60px; background:#1e293b; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff;">
+        <i class="fa-solid fa-cloud"></i>
+      </div>
+      <div>
+        <h6 class="mb-0 text-white">Cloud Migrations</h6><small class="text-muted">Secure Data Resilience</small>
+      </div>
+    </div>
+    <div class="scroll-card d-flex align-items-center gap-3">
+      <div style="width:60px; height:60px; background:#1e293b; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff;">
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <div>
+        <h6 class="mb-0 text-white">Active AMC Contracts</h6><small class="text-muted">24/7/365 Hardware SLA</small>
+      </div>
+    </div>
+    <div class="scroll-card d-flex align-items-center gap-3">
+      <div style="width:60px; height:60px; background:#1e293b; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff;">
+        <i class="fa-solid fa-network-wired"></i>
+      </div>
+      <div>
+        <h6 class="mb-0 text-white">Unified Comm</h6><small class="text-muted">Video & Infrastructure</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Solutions (Cards White color complete removal patch applied) -->
+<div class="container py-5">
+  <div class="d-flex justify-content-between align-items-end mb-5">
+    <div>
+      <span class="text-uppercase tracking-wider text-primary small font-weight-bold" style="letter-spacing: 0.1em; color: #6366f1 !important;">Enterprise Architecture</span>
+      <h2 class="mt-2 mb-0" style="font-weight: 700; font-size: 36px;">Core Technology Deliverables</h2>
+    </div>
+    <a href="{% url 'services' %}" class="text-decoration-none text-white font-weight-600">View More<i class="fa fa-arrow-right ms-2"></i></a>
+  </div>
+  <div class="row g-4">
+    {% for service in services %}
+    <div class="col-lg-4 col-md-6">
+      
+      <!-- INLINE DIRECT OVERRIDE: Isse bootstrap white system bypass ho jayega -->
+      <div class="card product-card" 
+           style="display: block !important; 
+                  background: rgba(255, 255, 255, 0.02) !important; 
+                  background-color: transparent !important;
+                  --bs-card-bg: transparent !important; 
+                  border: 1px solid rgba(255, 255, 255, 0.08) !important; 
+                  border-radius: 24px !important; 
+                  padding: 16px !important; 
+                  backdrop-filter: blur(12px) !important; 
+                  -webkit-backdrop-filter: blur(12px) !important;
+                  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3) !important;
+                  transition: all 0.4s ease !important;">
+
+        <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}" style="border-radius: 16px !important; object-fit: cover !important; height: 220px !important; width: 100% !important; display: block !important;">
+
+        <div class="card-body" style="background: transparent !important; background-color: transparent !important; padding: 20px 0 0 0 !important;">
+          <h4 style="color: #ffffff !important; font-weight: 700 !important; margin-bottom: 8px;">{{ service.title }}</h4>
+
+          <div class="stars my-2">
+            <span>
+              <small style="color: #a855f7 !important; font-weight: 600; text-uppercase: uppercase; letter-spacing: 0.05em;">{{ service.category.name }}</small>
+            </span>
+          </div>
+
+          <p class="product-price mb-4" style="font-size:14px; line-height:1.5; color: #cbd5e1 !important;">
+              {{ service.short_description }}
+          </p>
+
+          <a href="/service/{{ service.id }}/" class="btn w-100 py-3 text-center d-block" style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important; color: #ffffff !important; border: none !important; border-radius: 12px; font-weight: 600;">
+            View Service Details
+          </a>
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Category -->
+<div class="container py-5">
+  <h2 class="text-center mb-5 font-weight-700" style="font-size:32px;">Architectural Management Competencies</h2>
+  <div class="row g-4 text-center">
+    <div class="col-xl-3 col-sm-6">
+      <div class="category-box">
+        <i class="fa-solid fa-server"></i>
+        <h5 class="mb-0 text-white">Servers & Storage</h5>
+      </div>
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <div class="category-box">
+        <i class="fa-solid fa-shield-virus"></i>
+        <h5 class="mb-0 text-white">Information Security</h5>
+      </div>
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <div class="category-box">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <h5 class="mb-0 text-white">SaaS & Cloud</h5>
+      </div>
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <div class="category-box">
+        <i class="fa-solid fa-laptop-file"></i>
+        <h5 class="mb-0 text-white">Workstation Peripherals</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Features Architecture -->
+<div class="container py-5">
+  <div class="row g-4 text-center">
+    <div class="col-lg-3 col-sm-6">
+      <div class="feature-icon-box">
+        <span style="font-size: 2rem; display: block; margin-bottom: 10px;">🛡️</span>
+        <h5 class="text-white mt-2">Certified Security Partner</h5>
+        <p class="text-muted small mb-0">Engineered defenses validated by top IT news sources.</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+      <div class="feature-icon-box">
+        <span style="font-size: 2rem; display: block; margin-bottom: 10px;">⚙️</span>
+        <h5 class="text-white mt-2">End-to-End Integration</h5>
+        <p class="text-muted small mb-0">Full blueprint planning, staging, configuration, and active deployment.</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+      <div class="feature-icon-box">
+        <span style="font-size: 2rem; display: block; margin-bottom: 10px;">📞</span>
+        <h5 class="text-white mt-2">Dedicated AMC SLA</h5>
+                <p class="text-muted small mb-0">Round-the-clock priority response engineers keeping systems alive.</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+      <div class="feature-icon-box">
+        <span style="font-size: 2rem; display: block; margin-bottom: 10px;">🔄</span>
+        <h5 class="text-white mt-2">Data Continuity</h5>
+        <p class="text-muted small mb-0">Bulletproof backup systems safeguarding mission-critical processes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Metrics Analytics Counter Layer -->
+<section class="metrics-section py-5 my-5">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-md-3 col-sm-6">
+        <h2 style="font-weight: 800; color: #6366f1 !important;">99.99%</h2>
+        <p class="text-muted mb-0">Uptime SLA Guaranteed</p>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h2 style="font-weight: 800; color: #6366f1 !important;">OEMs</h2>
+        <p class="text-muted mb-0">Palo Alto, Sophos, Fortigate, Cisco Partners</p>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h2 style="font-weight: 800; color: #6366f1 !important;">100%</h2>
+        <p class="text-muted mb-0">Encrypted Data Recovery</p>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h2 style="font-weight: 800; color: #6366f1 !important;">24/7/365</h2>
+        <p class="text-muted mb-0">Active Infrastructure Monitoring</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fixed Complete 3D Engine JS Script Structure -->
+<script>
+  const targetCards = document.querySelectorAll('.hero-product-wrapper, .product-card');
+
+  targetCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - (rect.width / 2);
+      const y = e.clientY - rect.top - (rect.height / 2);
+      const factor = 10;
+      const xRotation = -(y / (rect.height / 2)) * factor;
+      const yRotation = (x / (rect.width / 2)) * factor;
+      card.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    });
+  });
+</script>
+
+{% endblock %}
+
