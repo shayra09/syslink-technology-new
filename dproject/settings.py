@@ -29,8 +29,7 @@ DEBUG = True
 import os
 
 
-# Yeh environment variable se uthayega, aur agar nahi mila toh sab allow kar dega
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = ['*']
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
