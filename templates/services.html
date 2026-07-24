@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-
+  <link href="{% static 'css/services.css' %}" rel="stylesheet" />
 <style>
     .category-nav {
         display: flex;
@@ -215,7 +215,7 @@
     </div>
 </div>
 
-<!-- <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
     const tiltCards = document.querySelectorAll('.card.service-card');
     
@@ -243,6 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-</script> -->
+</script>
 
 {% endblock %}
