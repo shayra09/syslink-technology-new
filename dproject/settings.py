@@ -118,4 +118,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'syslink26@gmail.com'
+<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = 'abcd efgh ijkl mnop'  # Replace with actual App Password
+=======
+EMAIL_HOST_PASSWORD = 'abcd efgh ijkl mnop'  # Replace with actual App Password
+>>>>>>> b99c6709ed1f71989714f8e850ada553f4cdb0c4

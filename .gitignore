@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # --- Python & Django ---
 __pycache__/
 *.pyc
@@ -24,3 +25,15 @@ Thumbs.db
 # --- Production Static/Media  ---
 # staticfiles/
 # media/
+=======
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+db.sqlite3
+
+# Temporarily ignore heavy media files causing the timeout
+media/
+static/media/
+>>>>>>> b99c6709ed1f71989714f8e850ada553f4cdb0c4
