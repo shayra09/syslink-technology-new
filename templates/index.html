@@ -2,11 +2,8 @@
 {% load static %}
 
 {% block content %}
-<<<<<<< HEAD
-  <link href="{% static 'css/services.css' %}" rel="stylesheet" />
-=======
+<link href="{% static 'css/services.css' %}" rel="stylesheet" />
 
->>>>>>> b99c6709ed1f71989714f8e850ada553f4cdb0c4
 <style>
   body {
     background-color: #060911 !important;
@@ -56,11 +53,7 @@
 </style>
 
 <video autoplay muted loop playsinline class="hero-video" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1; object-fit: cover; opacity: 0.15;">
-<<<<<<< HEAD
-  <source src="{% static 'media/videos/bg_video2.mp4' %}" type="video/mp4">
-=======
-<source src="{% static 'media/videos/bg_video2.mp4' %}" type="video/mp4">
->>>>>>> b99c6709ed1f71989714f8e850ada553f4cdb0c4
+  <source src="{{ MEDIA_URL }}videos/bg_video2.mp4" type="video/mp4">
 </video>
 
 <section class="hero py-5">
@@ -123,7 +116,7 @@
   </div>
 </div>
 
-<!-- Featured Solutions (Cards White color complete removal patch applied) -->
+<!-- Featured Solutions -->
 <div class="container py-5">
   <div class="d-flex justify-content-between align-items-end mb-5">
     <div>
@@ -135,8 +128,6 @@
   <div class="row g-4">
     {% for service in services %}
     <div class="col-lg-4 col-md-6">
-      
-      <!-- INLINE DIRECT OVERRIDE: Isse bootstrap white system bypass ho jayega -->
       <div class="card product-card" 
            style="display: block !important; 
                   background: rgba(255, 255, 255, 0.02) !important; 
@@ -157,7 +148,7 @@
 
           <div class="stars my-2">
             <span>
-              <small style="color: #a855f7 !important; font-weight: 600; text-uppercase: uppercase; letter-spacing: 0.05em;">{{ service.category.name }}</small>
+              <small style="color: #a855f7 !important; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">{{ service.category.name }}</small>
             </span>
           </div>
 
@@ -228,7 +219,7 @@
       <div class="feature-icon-box">
         <span style="font-size: 2rem; display: block; margin-bottom: 10px;">📞</span>
         <h5 class="text-white mt-2">Dedicated AMC SLA</h5>
-                <p class="text-muted small mb-0">Round-the-clock priority response engineers keeping systems alive.</p>
+        <p class="text-muted small mb-0">Round-the-clock priority response engineers keeping systems alive.</p>
       </div>
     </div>
     <div class="col-lg-3 col-sm-6">
@@ -265,7 +256,7 @@
   </div>
 </section>
 
-<!-- Fixed Complete 3D Engine JS Script Structure -->
+<!-- 3D Engine JS Script Structure -->
 <script>
   const targetCards = document.querySelectorAll('.hero-product-wrapper, .product-card');
 
@@ -287,4 +278,3 @@
 </script>
 
 {% endblock %}
-
