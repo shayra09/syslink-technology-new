@@ -31,15 +31,14 @@ INSTALLED_APPS = [
     'user',
 ]
 
-# FIX: Spelling fixed from AUTHENTICATIN to AUTHENTICATION
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend'
 ]
 
-# FIX: Added WhiteNoiseMiddleware directly below SecurityMiddleware
+# WhiteNoiseMiddleware added for Render static/media serving
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # <-- RENDER CS/STATIC SERVING KE LIYE ZARURI
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -113,13 +112,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email Config
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Standard host is recommended
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'syslink26@gmail.com'
-<<<<<<< HEAD
-EMAIL_HOST_PASSWORD = 'abcd efgh ijkl mnop'  # Replace with actual App Password
-=======
-EMAIL_HOST_PASSWORD = 'abcd efgh ijkl mnop'  # Replace with actual App Password
->>>>>>> b99c6709ed1f71989714f8e850ada553f4cdb0c4
+EMAIL_HOST_PASSWORD = 'abcd efgh ijkl mnop'
