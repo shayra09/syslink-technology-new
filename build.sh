@@ -13,3 +13,4 @@ python manage.py migrate
 
 # Load local admin data
 python manage.py loaddata data.json
+
