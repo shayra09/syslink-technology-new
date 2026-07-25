@@ -1,4 +1,5 @@
-
+#!/usr/bin/env bash
+# Exit on error
 set -o errexit
 
 # Install dependencies
@@ -9,3 +10,6 @@ python manage.py collectstatic --no-input
 
 # Run migrations
 python manage.py migrate
+
+# Load local admin data
+python manage.py loaddata data.json
