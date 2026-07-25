@@ -61,8 +61,6 @@
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.3288792895264!2d88.35610437474416!3d22.566799679495837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277007ebede01%3A0xf5ac5da5ab54f78c!2sSys%20Link%20Technology!5e0!3m2!1sen!2sin!4v1783765021730!5m2!1sen!2sin"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="strict-origin-when-cross-origin"></iframe>
-
-                    </iframe>
                 </div>
             </div>
 
@@ -75,49 +73,60 @@
                         <span class="title-underline"></span>
                     </h3>
 
-<!-- Form Section Only (Replace inside your template) -->
-<form method="POST" action="{% url 'contact' %}">
-    {% csrf_token %}
+                    <!-- Form Section Only (Replace inside your template) -->
+                    <form method="POST" action="{% url 'contact' %}">
+                        {% csrf_token %}
 
-    <!-- Django Messages Display Area (For Success/Error Alerts) -->
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="submit" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        {% endfor %}
-    {% endif %}
+                        <!-- Django Messages Display Area (For Success/Error Alerts) -->
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show"
+                            role="alert">
+                            {{ message }}
+                            <!-- FIXED: Changed type="submit" to type="button" so it doesn't trigger form submission -->
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
 
-    <div class="row g-3">
-        <div class="col-md-6">
-            <div class="form-floating mb-3">
-                <!-- Added: name="name" -->
-                <input type="text" name="name" class="form-control glass-input" id="floatName" placeholder="Name" required>
-                <label for="floatName" class="text-white-50">Your Name</label>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-floating mb-3">
-                <!-- Added: name="email" -->
-                <input type="email" name="email" class="form-control glass-input" id="floatEmail" placeholder="Email" required>
-                <label for="floatEmail" class="text-white-50">Email Address</label>
-            </div>
-        </div>
-    </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <!-- Added value attribute -->
+                                    <input type="text" name="name" value="{{ form_data.name|default:'' }}"
+                                        class="form-control glass-input" id="floatName" placeholder="Name" required>
+                                    <label for="floatName" class="text-white-50">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <!-- Added value attribute -->
+                                    <input type="email" name="email" value="{{ form_data.email|default:'' }}"
+                                        class="form-control glass-input" id="floatEmail" placeholder="Email" required>
+                                    <label for="floatEmail" class="text-white-50">Email Address</label>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="form-floating mb-3">
-        <input type="text" name="subject" class="form-control glass-input" id="floatSubject" placeholder="Subject" required>
-        <label for="floatSubject" class="text-white-50">Subject</label>
-    </div>
-    <div class="form-floating mb-4">
-        <textarea name="message" class="form-control glass-input" id="floatMessage" placeholder="Message" style="height: 150px" required></textarea>
-        <label for="floatMessage" class="text-white-50">Message Details</label>
-    </div>
-    <button type="submit" class="btn text-white w-100 fw-bold py-3 text-uppercase tracking-wider btn-gradient-glow">
-        Dispatch Message <i class="fa-solid fa-paper-plane ms-2 ship-icon"></i>
-    </button>
-</form>
+                        <div class="form-floating mb-3">
+                            <!-- Added value attribute -->
+                            <input type="text" name="subject" value="{{ form_data.subject|default:'' }}"
+                                class="form-control glass-input" id="floatSubject" placeholder="Subject" required>
+                            <label for="floatSubject" class="text-white-50">Subject</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <!-- Added value INSIDE the textarea tags -->
+                            <textarea name="message" class="form-control glass-input" id="floatMessage"
+                                placeholder="Message" style="height: 150px"
+                                required>{{ form_data.message|default:'' }}</textarea>
+                            <label for="floatMessage" class="text-white-50">Message Details</label>
+                        </div>
+
+                        <button type="submit"
+                            class="btn text-white w-100 fw-bold py-3 text-uppercase tracking-wider btn-gradient-glow">
+                            Dispatch Message <i class="fa-solid fa-paper-plane ms-2 ship-icon"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
 
@@ -139,49 +148,47 @@
         0% {
             background-position: 0% 50%;
         }
-
         50% {
             background-position: 100% 50%;
         }
-
         100% {
             background-position: 0% 50%;
         }
     }
 
     .glass-card {
-        background: rgba(255, 255, 255, 0.03) !important;
+        background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(12px) saturate(180%);
         -webkit-backdrop-filter: blur(12px) saturate(180%);
-        border: 1px solid rgba(255, 255, 255, 0.07) !important;
-        border-radius: 16px !important;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 16px;
         transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background 0.4s ease;
     }
 
     .glass-card:hover {
         transform: translateY(-8px) scale(1.01);
-        background: rgba(255, 255, 255, 0.06) !important;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+        background: rgba(255, 255, 255, 0.06) ;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) ;
     }
 
     .glass-input {
-        background: rgba(255, 255, 255, 0.04) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        color: #ffffff !important;
-        border-radius: 10px !important;
-        transition: all 0.3s ease-in-out !important;
+        background: rgba(255, 255, 255, 0.04) ;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #ffffff ;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out ;
     }
 
     .glass-input:focus {
-        background: rgba(255, 255, 255, 0.08) !important;
-        border-color: rgba(13, 110, 253, 0.6) !important;
-        box-shadow: 0 0 15px rgba(13, 110, 253, 0.25) !important;
+        background: rgba(255, 255, 255, 0.08) ;
+        border-color: rgba(13, 110, 253, 0.6);
+        box-shadow: 0 0 15px rgba(13, 110, 253, 0.25);
         transform: translateY(-2px);
     }
 
     .form-floating>.glass-input:focus~label,
     .form-floating>.glass-input:not(:placeholder-shown)~label {
-        color: #0d6efd !important;
+        color: #0d6efd;
         transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
     }
 

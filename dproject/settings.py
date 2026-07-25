@@ -38,8 +38,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.common.middleware.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -123,4 +121,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'syslink26@gmail.com'
-EMAIL_HOST_PASSWORD = 'abcd efgh ijkl mnop'
+EMAIL_HOST_PASSWORD = '' 
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER               
