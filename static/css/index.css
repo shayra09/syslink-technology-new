@@ -1,21 +1,32 @@
 
-/* --- IS CSS KO APNI SERVICES.CSS FILE MEIN SABSE NICHE PASTE KAREIN --- */
 
+.custom-toggler-btn {
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+}
+
+.custom-toggler-btn:focus {
+  box-shadow: none !important;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
 .card.product-card {
   display: block !important;
-  border-radius: 24px !important;                 /* Aapka original round shape */
-  background: rgba(255, 255, 255, 0.02) !important; /* White color remove karne ke liye transparent background */
-  padding: 16px !important;                       /* Card ke andar ka spacing */
-  backdrop-filter: blur(12px) !important;         /* Glassmorphism blur filter */
+  border-radius: 24px !important;                
+  background: rgba(255, 255, 255, 0.02) !important; 
+  padding: 16px !important;                      
+  backdrop-filter: blur(12px) !important;        
   -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Subtle dark-white border line */
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3) !important;  /* Background smooth shadow */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important; 
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3) !important;  
   transform-style: preserve-3d !important;
   transition: border-color 0.5s ease, box-shadow 0.5s ease, transform 0.4s ease !important;
   will-change: transform;
 }
 
-/* Card body ka white background strip remove karne ke liye */
+
 .card.product-card .card-body {
   background: transparent !important;
   padding-left: 0 !important;
@@ -23,14 +34,12 @@
   padding-top: 20px !important;
 }
 
-/* Loop images ko perfectly box mein fit karne ke liye */
 .card.product-card .card-img-top {
   border-radius: 16px !important;
   object-fit: cover !important;
   height: 220px !important;
 }
 
-/* Hover karne par premium shadow aur dynamic upward lift */
 .card.product-card:hover {
   border-color: rgba(255, 255, 255, 0.2) !important;
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55), 0 0 50px rgba(99, 102, 241, 0.15) !important;
@@ -38,7 +47,7 @@
   transform: translateY(-6px) !important;
 }
 
-/* Card titles and text colors clarity setup */
+
 .card.product-card h4 {
   color: #ffffff !important;
   font-weight: 700 !important;
@@ -62,7 +71,7 @@
   will-change: transform;
 }
 
-/* Image styling and Idle Float Animation */
+
 .hero-product.effect-3d {
   display: block;
   max-width: 100%;
@@ -73,14 +82,14 @@
   transition: transform 0.2s ease-out;
 }
 
-/* Continuous smooth floating loop */
+
 @keyframes premiumFloat {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
 }
 
-/* Premium interactions on Hover */
+
 .hero-product-wrapper:hover {
   border-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55), 0 0 50px rgba(0, 123, 255, 0.15);
