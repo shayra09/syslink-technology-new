@@ -28,8 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage', 
-    'cloudinary',
+    # 'cloudinary_storage', 
+    # 'cloudinary',
     'user',
 ]
 
@@ -132,17 +132,17 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # Cloudinary Configuration
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': ' x8q03eta',
-    'API_KEY': '657467347633178',
-    'API_SECRET': 'l970zMJcKsBlBD0UgWIE3VStd00',
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': ' x8q03eta',
+#     'API_KEY': '657467347633178',
+#     'API_SECRET': 'l970zMJcKsBlBD0UgWIE3VStd00',
+# }
 
-STORAGES = {
-    "default": {
-        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-    },
-}
+# STORAGES = {
+#     "default": {
+#         "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+#     },
+#     "staticfiles": {
+#         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+#     },
+# }
