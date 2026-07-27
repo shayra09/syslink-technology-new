@@ -27,8 +27,8 @@ def about(request):
     return render(request, "about.html")
 
 
-def client(request):
-    return render(request, "client.html")
+def partner(request):
+    return render(request, "partner.html")
 
 
 

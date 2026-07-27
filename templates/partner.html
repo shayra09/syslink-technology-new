@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .grad {
+    background: linear-gradient(135deg, #0b0f19 0%, #111827 100%) !important;
+    color: #ffffff;
+    min-height: 100vh;
+  }
+  .client-logo-card {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    transition: all 0.3s ease;
+  }
+  .client-logo-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6 !important;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15) !important;
+  }
+  .badge-tech { background: rgba(59, 130, 246, 0.12); color: #3b82f6; font-size: 0.75rem; }
+  .badge-partner { background: rgba(16, 185, 129, 0.12); color: #10b981; font-size: 0.75rem; }
+  
+  /* Logo image styling for realistic look */
+  .partner-logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    /* object-fit: contain;
+    filter: brightness(0) invert(1);  */
+
+  }
+
+</style>
+
+<div class="container grad p-5 rounded-4 shadow-lg my-5">
+  <!-- Header Section -->
+  <div class="text-center mb-5">
+    <span class="text-uppercase tracking-wider small fw-bold text-primary" style="letter-spacing: 0.1em;">SYS Link Technology Ecosystem</span>
+    <h1 class="fw-bold text-white mt-1 mb-2">Our Business Partners</h1>
+    <p class="text-muted mx-auto" style="max-width: 650px;">
+      SYS Link Technology has a matured level of business partnerships with leading global organizations to deliver cutting-edge technology solutions.
+    </p>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+    
+    <!-- 1. Adobe -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="{% static 'images/adobe.png' %}" alt="Adobe" class="partner-logo-img">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-partner mb-2 px-2 py-1 rounded">Software Partner</span>
+          <h5 class="fw-bold text-white mb-1">Adobe</h5>
+          <p class="text-muted small mb-0">Authorized software deployment, digital media tools, and creative cloud licensing frameworks.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Microsoft -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" class="partner-logo-img">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Cloud & Enterprise</span>
+          <h5 class="fw-bold text-white mb-1">Microsoft</h5>
+          <p class="text-muted small mb-0">Enterprise infrastructure, cloud solutions, and specialized volume licensing programs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Cisco -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco" class="partner-logo-img">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Network Security</span>
+          <h5 class="fw-bold text-white mb-1">Cisco</h5>
+          <p class="text-muted small mb-0">Advanced networking, switching automation, and secure enterprise cyberway routing infrastructure.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. HP -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/HP_New_Logo_2D.svg" alt="HP" class="partner-logo-img">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-partner mb-2 px-2 py-1 rounded">Hardware Solutions</span>
+          <h5 class="fw-bold text-white mb-1">HP</h5>
+          <p class="text-muted small mb-0">High-performance computing hardware, business systems, and automated printing infrastructure.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Dell -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" class="partner-logo-img">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Enterprise Servers</span>
+          <h5 class="fw-bold text-white mb-1">Dell Technologies</h5>
+          <p class="text-muted small mb-0">Server deployment, storage systems integration, and scalable client computing nodes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Lenovo -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="{%  static 'images/lenovo.png' %}" alt="Lenovo" class="partner-logo-img w-100 img-fluid">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Computing Systems</span>
+          <h5 class="fw-bold text-white mb-1">Lenovo</h5>
+          <p class="text-muted small mb-0">Reliable business desktops, workstation setups, and corporate hardware infrastructure.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. CP Plus / Hikvision -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <span class="text-white fw-bold fs-4">CP PLUS</span>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-partner mb-2 px-2 py-1 rounded">Surveillance & Security</span>
+          <h5 class="fw-bold text-white mb-1">CP Plus / Hikvision</h5>
+          <p class="text-muted small mb-0">Advanced CCTV security systems, biometrics, and intelligent surveillance nodes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Schneider Electric / APC -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Schneider_Electric_2007.svg" alt="Schneider" class="partner-logo-img">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Power Solutions</span>
+          <h5 class="fw-bold text-white mb-1">APC / Schneider</h5>
+          <p class="text-muted small mb-0">Uninterruptible power supplies, surge protection, and server room power management.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Oracle -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle" class="partner-logo-img">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Database Management</span>
+          <h5 class="fw-bold text-white mb-1">Oracle</h5>
+          <p class="text-muted small mb-0">Enterprise database systems, cloud engineering, and high-performance backend layers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. VMware -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="{% static 'images/vmware.webp' %}" alt="VMware" class="partner-logo-img img-fluid w-100">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-partner mb-2 px-2 py-1 rounded">Virtualization</span>
+          <h5 class="fw-bold text-white mb-1">VMware</h5>
+          <p class="text-muted small mb-0">Virtualization software, multi-cloud enterprise frameworks, and digital workspace setups.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Intel -->
+    <div class="col-xl-3 col-lg-4 col-sm-6">
+      <div class="client-logo-card p-4 h-100 rounded-4 shadow d-flex flex-column justify-content-between">
+        <div class="text-center mb-3">
+          <div class="bg-dark rounded-3 p-3 d-flex align-items-center justify-content-center" style="height: 110px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282020%29.svg" alt="Intel" class="partner-logo-img">
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-tech mb-2 px-2 py-1 rounded">Processor Tech</span>
+          <h5 class="fw-bold text-white mb-1">Intel</h5>
+          <p class="text-muted small mb-0">High-end computing processors, server chipsets, and workstation core optimization.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
